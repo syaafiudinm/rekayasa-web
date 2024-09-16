@@ -9,4 +9,5 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.list');
+Route::get('/add-mahasiswa', [MahasiswaController::class, 'create'])->name('mahasiswa.add');
 Route::get('/', [HomeController::class, 'index'])->name('home');

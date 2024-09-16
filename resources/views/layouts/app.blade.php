@@ -21,6 +21,7 @@
               <div class="navbar-nav">
                 <a class="nav-link {{Route::is('home') ? 'active' : ''}}" href="{{route('home')}}">Home</a>
                 <a class="nav-link {{Route::is('mahasiswa.list') ? 'active' : ''}}" href="{{route('mahasiswa.list')}}">Mahasiswa</a>
+                <a class="nav-link {{Route::is('mahasiswa.add') ? 'active' : ''}}" href="{{route('mahasiswa.list')}}">Mahasiswa</a>
               </div>
             </div>
           </div>

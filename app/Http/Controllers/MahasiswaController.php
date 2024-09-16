@@ -17,4 +17,8 @@ class MahasiswaController extends Controller
         // return $mahasiswa;
         // dd($mahasiswa);
     }
+
+    public function create(){
+        return view('add-mahasiswa');
+    }
 }
