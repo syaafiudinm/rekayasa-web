@@ -3,6 +3,7 @@
 @section('main')
 <div class="d-flex justify-content-center" style="height: 100vh;margin-top:50px;">
     <div>
+        @include('layouts.messages')
         <h2>Daftar Mahasiswa</h2>
         <table class="table table-striped">
             <thead class="table-primary">
