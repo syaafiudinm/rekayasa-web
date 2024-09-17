@@ -22,8 +22,8 @@
                     <td>{{$mhs->nim}}</td>
                     <td>{{$mhs->alamat}}</td>
                     <td>
-                        <a href="{{route('edit.mahasiswa',$mhs->id)}}" class="btn btn-info text-white">update</a>
-                        <a href="" class="btn btn-danger">delete</a>
+                        <a href="{{route('edit.mahasiswa',$mhs->id)}}"  class="btn btn-primary text-white"><i class="bi bi-recycle"></i></a>
+                        <a href="{{route('mahasiswa.deleted', $mhs->id)}}" onclick="return confirm('Anda Yakin Ingin Menghapusnya?');" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a>
                     </td>
                 </tr>
                 @endforeach

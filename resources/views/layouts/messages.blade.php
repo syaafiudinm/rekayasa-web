@@ -4,14 +4,20 @@
 </div>
 @endif
 
-@if (Session::has('error'))
+{{-- @if (Session::has('error'))
 <div class="alert alert-danger">
     {{Session::get('error')}}
 </div>
-@endif
+@endif --}}
 
 @if (Session::has('status'))
 <div class="alert alert-primary">
     {{Session::get('status')}}
+</div>
+@endif
+
+@if (Session::has('deleted'))
+<div class="alert alert-danger">
+    {{Session::get('deleted')}}
 </div>
 @endif

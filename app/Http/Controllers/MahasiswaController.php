@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 class MahasiswaController extends Controller
 {
     public function index(){
-        $mahasiswa = Mahasiswa::orderBy('prodi_id', 'DESC');
+        $mahasiswa = Mahasiswa::orderBy('nama', 'ASC');
 
         $mahasiswa = $mahasiswa->paginate(5)->withQueryString();
                 
@@ -78,5 +78,13 @@ class MahasiswaController extends Controller
         $mahasiswa->save();
 
         return redirect()->route('mahasiswa.list')->with('status', 'data mahasiswa berhasil diubah');
+    }
+
+    public function destroy(int $id){
+        $mahasiswa = Mahasiswa::findOrFail($id);
+
+        $mahasiswa->delete();
+
+        return redirect()->route('mahasiswa.list')->with('deleted', 'mahasiswa berhasil di hapus');
     }
 }
