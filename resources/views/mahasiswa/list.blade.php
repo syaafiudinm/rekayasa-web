@@ -5,7 +5,12 @@
     <div>
         @include('layouts.messages')
         <h2>Daftar Mahasiswa</h2>
-        <table class="table table-striped">
+        <form class="d-flex " method="GET" style="gap: 8px; margin-bottom:10px;">
+            <input class="form-control me-2" type="text" placeholder="cari mahasiswa..." aria-label="Search" name="keyword" value="{{Request::get('keyword')}}">
+            <button class="btn btn-outline-primary" type="submit">Search</button>
+            <a href="{{route('mahasiswa.list')}}" class="btn btn-outline-success">clear</a>
+        </form>
+        <table class="table table-striped table-bordered">
             <thead class="table-info">
                 <tr><th scope="col">No.</th>
                     <th scope="col">Nama</th>

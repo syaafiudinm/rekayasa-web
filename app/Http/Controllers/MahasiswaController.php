@@ -8,8 +8,12 @@ use Illuminate\Support\Facades\Validator;
 
 class MahasiswaController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         $mahasiswa = Mahasiswa::orderBy('nama', 'ASC');
+
+        if (!empty($request->keyword)){
+            $mahasiswa->where('nama', 'like','%'.$request->keyword.'%');
+        }
 
         $mahasiswa = $mahasiswa->paginate(5)->withQueryString();
                 
