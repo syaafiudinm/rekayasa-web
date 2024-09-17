@@ -7,29 +7,29 @@
         </div>
         <div class="col-md-9">
             <div class="card border-0 shadow">
-                <div class="card-header text-black">
-                    Add Mahasiswa       
+                <div class="card-header text-white bg-primary">
+                    Edit Mahasiswa       
                 </div>
                 <div class="card-body">
-                <form action="{{route('mahasiswa.store')}}" method="POST">
+                <form action="{{route('update.mahasiswa',$mahasiswa->id)}}" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
-                        <input type="text" class="form-control @error('nama') is-invalid @enderror" placeholder="masukkan nama mahasiswa..." name="nama" id="nama" value="{{old('nama')}}"/>
+                        <input type="text" class="form-control @error('nama') is-invalid @enderror" placeholder="masukkan nama mahasiswa..." name="nama" id="nama" value="{{old('nama',$mahasiswa->nama)}}" autocomplete="off" />
                         @error('nama')
                             <p class="invalid-feedback">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="mb-3">
                         <label for="nim" class="form-label">nim</label>
-                        <input type="text" class="form-control  @error('nim') is-invalid @enderror" placeholder="masukkan nim mahasiswa..." name="nim" id="nim" value="{{old('nim')}}"/>
+                        <input type="text" class="form-control  @error('nim') is-invalid @enderror" placeholder="masukkan nim mahasiswa..." name="nim" id="nim" value="{{old('nim',$mahasiswa->nim)}}" autocomplete="off"/>
                         @error('nim')
                             <p class="invalid-feedback">{{$message}}</p>
                         @enderror
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="form-label">alamat</label>
-                        <input type="text" class="form-control  @error('alamat') is-invalid @enderror" placeholder="alamat" name="alamat" id="alamat" value="{{old('alamat')}}"/>
+                        <input type="text" class="form-control  @error('alamat') is-invalid @enderror" placeholder="alamat" name="alamat" id="alamat" value="{{old('alamat',$mahasiswa->alamat)}}" autocomplete="off"/>
                         @error('alamat')
                             <p class="invalid-feedback">{{$message}}</p>
                         @enderror
@@ -47,7 +47,7 @@
                             @enderror
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary mt-2">Create</button>   
+                    <button type="submit" class="btn btn-primary mt-2">Save</button>   
                 </form>                  
                 </div>
             </div>                 

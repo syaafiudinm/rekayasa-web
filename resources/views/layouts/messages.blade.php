@@ -9,3 +9,9 @@
     {{Session::get('error')}}
 </div>
 @endif
+
+@if (Session::has('status'))
+<div class="alert alert-primary">
+    {{Session::get('status')}}
+</div>
+@endif
